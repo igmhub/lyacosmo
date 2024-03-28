@@ -33,10 +33,7 @@ class AstropyCosmo:
 
     Attributes
     ----------
-    config: configparser.SectionProxy
-    Parsed options to build cosmology
-
-    use_hunits: bool
+    use_h_units: bool
     If True, do the computation in h^-1Mpc. Otherwise, do it in Mpc
     """
     def __init__(
