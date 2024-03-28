@@ -2,3 +2,5 @@
 lyacosmo.egg-info/
 
 lyacosmo/__pycache__/
+
+tests/__pycache__/

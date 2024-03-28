@@ -40,7 +40,7 @@ class AstropyCosmo:
     If True, do the computation in h^-1Mpc. Otherwise, do it in Mpc
     """
     def __init__(
-            self, Omega_m, Omega_k=0., Omega_r=0., w0=-1, H0=67.36,
+            self, Omega_m, Omega_k=0., Omega_r=0., w0=-1., H0=67.36,
             use_h_units=True, redshift_grid=None
     ):
         self.use_h_units = use_h_units
