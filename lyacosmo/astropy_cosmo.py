@@ -1,6 +1,6 @@
 import numpy as np
 from numba import njit, float64
-from scipy.interpolate import interp1d
+from scipy.interpolate import CubicSpline
 from scipy.integrate import quad
 from scipy.constants import speed_of_light
 
@@ -64,8 +64,8 @@ class AstropyCosmo:
             comoving_transverse_distance *= H0 / 100
 
         # D_C, D_M
-        self.get_dist_c = interp1d(z, comoving_distance)
-        self.get_dist_m = interp1d(z, comoving_transverse_distance)
+        self.get_dist_c = CubicSpline(z, comoving_distance)
+        self.get_dist_m = CubicSpline(z, comoving_transverse_distance)
 
     def _comoving_distance_scalar(self, z):
         """Compute integral of inverse efunc for a scalar input redshift
