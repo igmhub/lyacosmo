@@ -34,7 +34,7 @@ def test_comoving_distance():
     assert result is not None
     assert isinstance(result, np.ndarray)
     assert len(result) == 3
-    assert float(cosmo.get_dist_c(2.3)) == 10790.582214326228
+    assert np.isclose(float(cosmo.get_dist_c(2.3)), 10790.582214326228)
 
 
 def test_comoving_transverse_distance():
@@ -42,4 +42,4 @@ def test_comoving_transverse_distance():
     result = cosmo._comoving_transverse_distance(1.0)
     assert result is not None
     assert isinstance(result, float)
-    assert float(cosmo.get_dist_m(3.4)) == 4698.831363985478
+    assert np.isclose(float(cosmo.get_dist_m(3.4)), 4698.831363985478)
