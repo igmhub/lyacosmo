@@ -57,7 +57,7 @@ class PiccaCosmo(object):
             )
 
         # D_C
-        self.get_disc_c = interp1d(z, r_comov)
+        self.get_dist_c = interp1d(z, r_comov)
 
         # dist_m here is the comoving angular diameter distance
         if Omega_k == 0.:

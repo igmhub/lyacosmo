@@ -41,7 +41,7 @@ class AstropyCosmo:
     """
     def __init__(
             self, Omega_m, Omega_k=0., Omega_r=0., w0=-1, H0=67.36,
-            use_h_units=False, redshift_grid=None
+            use_h_units=True, redshift_grid=None
     ):
         self.use_h_units = use_h_units
         self.H0 = H0
@@ -66,7 +66,6 @@ class AstropyCosmo:
         # D_C, D_M
         self.get_dist_c = interp1d(z, comoving_distance)
         self.get_dist_m = interp1d(z, comoving_transverse_distance)
-        self.get_FAP = interp1d(z, comoving_transverse_distance / comoving_distance)
 
     def _comoving_distance_scalar(self, z):
         """Compute integral of inverse efunc for a scalar input redshift
